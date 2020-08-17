@@ -77,4 +77,27 @@ describe("Scope function like Kotlin.", () => {
       expect(actual).toEqual(target);
     });
   });
+
+  describe("Object#also", () => {
+    it("could be call 'also' but must pass legacy function object.", () => {
+      const target: Object = { foo: "bar" };
+      const spy = jest.fn();
+      target.also(spy);
+      expect(spy.mock.calls.length).toEqual(1);
+      expect(spy.mock.calls[0][0]).toEqual(target);
+    });
+
+    it("also should be pass 'this' to first variable.", () => {
+      const target: Object = { foo: "bar" };
+      target.also(it => expect(it).toEqual(target));
+    });
+
+    it("also should return callback returned value.", () => {
+      const target: Object = { foo: "bar" };
+      const actual = target.also(function() {
+        return { bar: "foo" };
+      });
+      expect(actual).toEqual(target);
+    });
+  });
 });

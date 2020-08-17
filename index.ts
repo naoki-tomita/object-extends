@@ -21,3 +21,7 @@ Object.prototype.let = function<T, U>(fn: (it: T) => U): U {
 Object.prototype.apply = function<T>(this: T, fn: (this: T) => void): T {
   return (fn as any).bind(this)(), this;
 }
+
+Object.prototype.also = function<T>(this: T, fn: (it: T) => void): T {
+  return fn(this), this;
+}
