@@ -1,5 +1,5 @@
-const _ = {};
-export default _;
+const def = {};
+export default def;
 
 declare global {
   interface Object {
