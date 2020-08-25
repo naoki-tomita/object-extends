@@ -1,4 +1,4 @@
-# Object extentionn for JavaScript.
+# Object extention for JavaScript.
 
 Like Kotlin.
 
