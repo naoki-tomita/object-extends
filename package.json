@@ -1,6 +1,6 @@
 {
   "name": "object-extention",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/index.js",
   "license": "MIT",
   "types": "dist/index.d.ts",
@@ -16,6 +16,7 @@
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "tsc -p tsconfig.build.json",
-    "test": "jest "
+    "prepublish": "yarn build",
+    "test": "jest"
   }
 }
