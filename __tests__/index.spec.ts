@@ -1,4 +1,4 @@
-import "../";
+import "../index.ts";
 describe("Scope function like Kotlin.", () => {
   describe("Object#run", () => {
     it("could be call 'run' but must pass legacy function object.", () => {
@@ -98,6 +98,15 @@ describe("Scope function like Kotlin.", () => {
         return { bar: "foo" };
       });
       expect(actual).toEqual(target);
+    });
+  });
+
+  describe("for each", () => {
+    it("should not enumratable", () => {
+      const target: Object = { foo: "bar" };
+      for (const i in target) {
+        expect(i).toBe("foo");
+      }
     });
   });
 });
